@@ -1,35 +1,34 @@
-import BookCard from '@/features/book/ui/BookCard'
 import style from './BookPage.module.css'
 import { BookList } from '@/features/book/ui'
 import { useLoaderData } from 'react-router'
 import type { Book } from '@/features/book/types'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 
 function BookPage() {
     const books = useLoaderData<Book[]>()
+    const [book, setBook] = useState<Book>()
     const handleBook = useCallback((book: Book) => {
-        console.log('Handle Book!')
-        console.log(book)
+        setBook(book)
     }, [])
     return (
         <div className={style.container}>
             <BookList books={books} onClick={handleBook} />
-            <div
-                style={{
-                    backgroundColor: '#fff',
-                    flex: 1,
-                    overflowY: 'auto',
-                }}
-            >
-                <h1 style={{ fontSize: '1.5em' }}>선택한 문제집</h1>
-                <BookCard
-                    book={{
-                        description: '문제 설명',
-                        title: ' 테스트 문제 입니다.',
-                        id: 1,
-                    }}
-                />
-            </div>
+            <section>
+                {book ? (
+                    /**
+                     * TODO
+                     * - Question Component 필요
+                     * - Select 한 Book 이 있을 경우 여기에 Render 해야함
+                     */
+                    <div>
+                        <h1>{book.title}</h1>
+                    </div>
+                ) : (
+                    <div className={style.nodata}>
+                        <p>문제집을 선택하여주십시오</p>
+                    </div>
+                )}
+            </section>
         </div>
     )
 }
