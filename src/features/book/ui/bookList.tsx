@@ -4,8 +4,9 @@ import style from './BookList.module.css'
 
 type BookListProp = {
     books: Book[]
+    onClick?: (book: Book) => void
 }
-function BookList({ books }: BookListProp) {
+function BookList({ books, onClick = () => {} }: BookListProp) {
     return (
         <div className={style.container}>
             <div className={style.top}>
@@ -14,7 +15,7 @@ function BookList({ books }: BookListProp) {
             <ul>
                 <li>
                     {books.map((book) => (
-                        <BookCard key={book.id} {...book} />
+                        <BookCard key={book.id} book={book} onClick={onClick} />
                     ))}
                 </li>
             </ul>
