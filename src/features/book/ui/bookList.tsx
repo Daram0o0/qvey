@@ -1,15 +1,11 @@
-import { useBookList } from '../hook/useBookList'
 import type { Book } from '../types'
 import BookCard from './BookCard'
 import style from './BookList.module.css'
-const DEV_BOOK: Book = {
-    description: '퍼블리싱용 Book 입니다.',
-    title: '퍼블리싱용 문제집 1 입니다.',
-    id: 1,
-}
-function BookList() {
-    const {} = useBookList()
 
+type BookListProp = {
+    books: Book[]
+}
+function BookList({ books }: BookListProp) {
     return (
         <div className={style.container}>
             <div className={style.top}>
@@ -17,79 +13,9 @@ function BookList() {
             </div>
             <ul>
                 <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
-                </li>
-                <li>
-                    <BookCard {...DEV_BOOK} />
+                    {books.map((book) => (
+                        <BookCard key={book.id} {...book} />
+                    ))}
                 </li>
             </ul>
         </div>

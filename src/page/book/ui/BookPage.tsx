@@ -1,11 +1,14 @@
 import BookCard from '@/features/book/ui/BookCard'
 import style from './BookPage.module.css'
 import { BookList } from '@/features/book/ui'
+import { useLoaderData } from 'react-router'
+import type { Book } from '@/features/book/types'
 
 function BookPage() {
+    const books = useLoaderData<Book[]>()
     return (
         <div className={style.container}>
-            <BookList />
+            <BookList books={books} />
             <div
                 style={{
                     backgroundColor: '#fff',

@@ -10,6 +10,7 @@ import { NoticeDetailPage } from '../../page/noticeList'
 import { BookPage } from '../../page/book'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
+import { fetchBooks } from '@/features/book/api'
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
             { path: '/notice/new', Component: NoticeNewPage },
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
-            { path: '/book', Component: BookPage },
+            { path: '/book', Component: BookPage, loader: fetchBooks },
             {
                 path: '/notice',
                 children: [
