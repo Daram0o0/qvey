@@ -1,31 +1,51 @@
 :root {
 
-    --color-orange : #F7711E;
-    --color-dark-gray : #585757;
-    --color-dark-green : #07343B;
+    /* 하얀색 */
     --color-white: #fff;
-    --color-light-gray : #ebebeb;
+    --color-white: #F4F4F4; /* 조금 덜 밝은 하얀색 */
+    --color-black: #11100F;
+
+    /* 검은색 */
+    --color-black: #11100F;
+
+    /* 회색 */
+    --color-gray : #969696;
+    --color-dark-gray : #585757;
+    --color-light-gray : #cecece;
+
+    /* 초록색*/
+    --color-dark-green : #07343B;
+
+    /* 노랑 & 오렌지 */
+    --color-orange : #F7711E;
+    --color-dark-orange: #C95C19;
+    --color-yellow: #F8A91F;
+
+    /* 크림 */
+    --color-cream : #FFF4E5;
 
     /* Background 만 */
-    --background-color-cream : #FFF4E5;
-    --background-color-dark-green: #07343B;
-    --background-color-yellow: #F8A91F;
+    --background-color-cream : var(--color-cream);
+    --background-color-dark-green: var(--color-dark-green);
+    --background-color-yellow: var(--color-yellow);
     --background-color-orange: var(--color-orange);
     --background-color-white: var(--color-white);
     --background-color-light-gray : var(--color-light-gray);
+    --background-color-gray : var(--color-gray);
 
     /* Font Color 만 */
-    --font-color-white: #F4F4F4;
-    --font-color-black: #11100F;
-    --font-color-gray: var(--color-dark-gray);
-    --font-color-dark-gray: #292929;
+    --font-color-white: var(--color-white);
+    --font-color-black: var(--color-black);
+    --font-color-gray: var(--color-gray);
+    --font-color-light-gray: var(--color-light-gray);
+    --font-color-dark-gray: var(--color-dark-gray);
     --font-color-orange: var(--color-orange);
-    --font-color-dark-orange: #C95C19;
+    --font-color-dark-orange: var(--color-dark-orange);
     --font-color-dark-green: var(--color-dark-green);
 
     /* Border 만 */ 
     --border-color-orange: var(--color-orange);
-    --border-color-dark-orange: #C95C19;
+    --border-color-dark-orange: var(--color-dark-orange);
 
     /* toast */
     --toast-success-bg: rgba(196, 245, 186, 0.6);

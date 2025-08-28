@@ -1,8 +1,12 @@
 import type { Book } from '../types'
 import style from './BookCard.module.css'
-function BookCard(book: Book) {
+type BookCardProp = {
+    book: Book
+    onClick?: (book: Book) => void
+}
+function BookCard({ book, onClick = () => {} }: BookCardProp) {
     return (
-        <div className={style.card}>
+        <div className={style.card} onClick={() => onClick(book)}>
             <div className={style.subject}>
                 <i>👍</i>
                 <span>

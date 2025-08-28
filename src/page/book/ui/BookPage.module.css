@@ -1,1 +1,28 @@
 .container { flex: 1; display: flex; min-height: 0; margin-bottom: 1rem;}
+.container > .bookList {} /* BookList.module.css  */
+
+.container > section {
+    flex: 1;
+    min-height: 0;
+    margin: 1em 2em;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px #000;
+    background-color: #fff;
+    scrollbar-gutter: stable; /* Scroll Bar 가 있다고 가정하고 스타일 */   
+    display: flex;
+}
+
+.container > section > .nodata {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > section > .nodata > p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-color-gray);
+    transform: translateY(-25px);
+}
