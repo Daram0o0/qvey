@@ -1,10 +1,10 @@
-import { CheckCircleRounded, ErrorRounded, InfoRounded, WarningRounded } from '@mui/icons-material'
+import { MdCheckCircle, MdError, MdInfo, MdWarning } from 'react-icons/md'
 import type { ToastType } from '../types'
 import type { JSX } from 'react'
 
 export const TOAST_ICON: Record<ToastType, JSX.Element> = {
-    success: <CheckCircleRounded />,
-    error: <ErrorRounded />,
-    info: <InfoRounded />,
-    warning: <WarningRounded />,
+    success: <MdCheckCircle />,
+    error: <MdError />,
+    info: <MdInfo />,
+    warning: <MdWarning />,
 }
