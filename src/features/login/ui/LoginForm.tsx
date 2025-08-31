@@ -3,7 +3,7 @@ import type { LoginErrors, LoginValues } from '../types'
 import { validateLogin } from '../model'
 import { useLogin } from '../hook'
 import styles from './LoginForm.module.css'
-import { VisibilityOffRounded, VisibilityRounded } from '@mui/icons-material'
+import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
 import { validateEmail, validatePassword } from '@/shared/lib/validators'
 
 const LoginForm = () => {
@@ -103,7 +103,7 @@ const LoginForm = () => {
                         onClick={togglePassword}
                         aria-label="Toggle password visibility"
                     >
-                        {showPassword ? <VisibilityRounded /> : <VisibilityOffRounded />}
+                        {showPassword ? <MdVisibility /> : <MdVisibilityOff />}
                     </button>
                 </div>
                 {touched.password && errors.password && <p className={styles.message}>{errors.password}</p>}
