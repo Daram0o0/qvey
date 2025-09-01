@@ -1,5 +1,5 @@
 import styles from './DevPage.module.css'
-import { VisibilityOffRounded, VisibilityRounded } from '@mui/icons-material'
+import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
 
 import { useState } from 'react'
 
@@ -30,7 +30,7 @@ function DevPage() {
                             onClick={togglePassword}
                             aria-label="Toggle password visibility"
                         >
-                            {showPassword ? <VisibilityRounded /> : <VisibilityOffRounded />}
+                            {showPassword ? <MdVisibility /> : <MdVisibilityOff />}
                         </button>
                     </div>
                     <span className={styles.message}>비밀번호는 8자 이상이어야 합니다.</span>
