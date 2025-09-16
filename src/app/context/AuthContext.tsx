@@ -1,4 +1,4 @@
-import { createContext, useCallback, type PropsWithChildren } from 'react'
+import { createContext, useCallback, useEffect, useState, type PropsWithChildren } from 'react'
 
 interface AuthContext {
     /**
@@ -7,13 +7,26 @@ interface AuthContext {
      * @returns
      */
     setAccessToken: (token: string) => void
+
+    /**
+     * accessToken
+     */
+    accessToken?: string
 }
 export const AuthContext = createContext<AuthContext | undefined>(undefined)
 
 export function AuthProvider({ children }: PropsWithChildren) {
-    const setAccessToken = useCallback((token: string) => {
-        console.log(token)
+    const [accessToken, setAccessToken] = useState<string | undefined>()
+
+    const _setAccessToken = useCallback((token: string) => {
+        setAccessToken(token)
+        alert('로그인 되었습니다.')
     }, [])
 
-    return <AuthContext value={{ setAccessToken }}>{children}</AuthContext>
+    const result = {
+        setAccessToken: _setAccessToken,
+        accessToken,
+    }
+
+    return <AuthContext value={result}>{children}</AuthContext>
 }
