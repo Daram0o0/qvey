@@ -3,17 +3,17 @@ import { LOGIN_API } from '../../../shared/config'
 import type { LoginParams, LoginResponse } from '../types'
 import { ToastError } from '@/shared/errors'
 
-export const loginApi = async (params: LoginParams): Promise<LoginResponse> => {
+export const loginApi = async (params: LoginParams): Promise<any> => {
     try {
         const response = await axios.post<LoginResponse>(LOGIN_API, params)
 
-        const { token, user } = response.data
+        const { accessToken } = response.data
 
-        if (!token || !user) {
-            throw new ToastError('토큰 또는 사용자 정보가 누락되었습니다.', 'error')
+        if (!accessToken) {
+            throw new ToastError('로그인 실패', 'error')
         }
 
-        return { token, user }
+        return accessToken
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
             const message = error.response?.data?.message || '로그인에 실패하였습니다.'
