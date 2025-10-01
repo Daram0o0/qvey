@@ -1,4 +1,4 @@
-import { createContext, useCallback, useEffect, useState, type PropsWithChildren } from 'react'
+import { createContext, useCallback, useState, type PropsWithChildren } from 'react'
 
 interface AuthContext {
     /**
