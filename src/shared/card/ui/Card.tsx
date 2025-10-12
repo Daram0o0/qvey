@@ -5,14 +5,19 @@ import type { footerType } from '@/widgets/cardItem/ui/CardItem'
 export type CardProps = {
     children?: React.ReactNode
     className?: string
+    onClick?: () => void
 }
 
 export type CardFooterProps = CardProps & {
     footer: footerType
 }
 
-function Card({ children, className = '' }: CardProps) {
-    return <div className={`${styles.container} ${className}`}>{children}</div>
+function Card({ children, className = '', onClick }: CardProps) {
+    return (
+        <div className={`${styles.container} ${className}`} onClick={onClick}>
+            {children}
+        </div>
+    )
 }
 
 Card.Thumbnail = function ({ children, className = '' }: CardProps) {

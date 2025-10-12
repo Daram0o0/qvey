@@ -55,12 +55,27 @@ const DUMMY_CARD_ITEMS: CardData[] = [
 ]
 
 function DEMO_CardItemPage() {
+    const handleClick = () => {
+        console.log('카드 클릭 이벤트')
+    }
+    const handleClickBookmark = () => {
+        console.log('북마크 클릭 이벤트')
+    }
+    const handleClickLike = () => {
+        console.log('좋아요 클릭 이벤트')
+    }
     return (
         <div>
             <h1>DEMO Card Item Page</h1>
             <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
                 {DUMMY_CARD_ITEMS.map((card) => (
-                    <CardItem key={card.id} card={card} />
+                    <CardItem
+                        key={card.id}
+                        card={card}
+                        onClick={handleClick}
+                        onBookmarkClick={handleClickBookmark}
+                        onLikeClick={handleClickLike}
+                    />
                 ))}
             </div>
         </div>

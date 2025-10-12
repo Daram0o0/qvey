@@ -30,11 +30,24 @@ export type CardData = {
 
 export type CardItemProps = {
     card: CardData
+    onClick?: () => void
+    onBookmarkClick?: () => void
+    onLikeClick?: () => void
 }
 
-function CardItem({ card }: CardItemProps) {
+function CardItem({ card, onClick, onBookmarkClick, onLikeClick }: CardItemProps) {
+    const handleClickBookmark = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        onBookmarkClick?.()
+    }
+
+    const handleClickLike = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        onLikeClick?.()
+    }
+
     return (
-        <Card>
+        <Card onClick={onClick}>
             {card.thumbnail && (
                 <Card.Thumbnail>
                     <img
@@ -42,14 +55,14 @@ function CardItem({ card }: CardItemProps) {
                         alt="문제집 썸네일"
                         className={styles.thumbnailImage}
                     />
-                    <FaBookmark className={styles.bookmark} />
+                    <FaBookmark className={styles.bookmark} onClick={handleClickBookmark} />
                 </Card.Thumbnail>
             )}
 
             <Card.Content>
                 <div className={styles.title}>
                     <h2>{card.content.title}</h2>
-                    {card.content.likes && <PiHeartDuotone />}
+                    {card.content.likes && <PiHeartDuotone onClick={handleClickLike} />}
                 </div>
                 <p className={styles.description}>{card.content.description}</p>
             </Card.Content>
