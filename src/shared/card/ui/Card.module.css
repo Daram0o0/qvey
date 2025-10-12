@@ -36,3 +36,22 @@
     align-items: center;
     font-size: 14px;
 }
+
+.date {
+    color: #6a6a6a;
+}
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.userInfo svg {
+    width: 24px;
+    height: 24px;
+    fill: #6366f1;
+}
+.userInfo span {
+    color: #000;
+    font-weight: 500;
+    margin: 0;
+}
