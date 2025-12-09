@@ -1,5 +1,4 @@
 import style from './Dashboard.module.css'
-import { Header } from '../../header'
 import { Aside } from '../../aside'
 import { Outlet } from 'react-router'
 
@@ -8,7 +7,6 @@ function Dashboard() {
         <div className={style.container}>
             <Aside />
             <main>
-                <Header />
                 <div>
                     <Outlet />
                 </div>

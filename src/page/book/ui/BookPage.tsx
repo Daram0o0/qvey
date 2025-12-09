@@ -1,5 +1,4 @@
 import style from './BookPage.module.css'
-import { BookList } from '@/features/book/ui'
 import { useLoaderData } from 'react-router'
 import type { Book } from '@/features/book/types'
 import { useCallback, useState } from 'react'
@@ -13,7 +12,7 @@ function BookPage() {
     }, [])
     return (
         <div className={style.container}>
-            <BookList books={books} onClick={handleBook} />
+            {/* <BookList books={books} onClick={handleBook} /> */}
             <section>
                 {book ? (
                     /**
