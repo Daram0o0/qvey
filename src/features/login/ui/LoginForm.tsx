@@ -7,7 +7,7 @@ import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
 import { validateEmail, validatePassword } from '@/shared/lib/validators'
 
 const LoginForm = () => {
-    const { login, loading } = useLogin()
+    useLogin()
 
     // TODO: 폼 초기값(model/initialVlaues.ts)로 분리
     const initialValue: LoginValues = {
@@ -58,7 +58,7 @@ const LoginForm = () => {
         const isValid = validateLogin(values)
         if (!isValid) return
 
-        await login(values)
+        // await login(values)
         console.log('로그인 성공👍 :', values)
     }
 
@@ -120,7 +120,7 @@ const LoginForm = () => {
             {/* TODO: 에러 타입에 따라 처리(ex: ErrorMessage 컴포넌트, 토스트 알림...) */}
             {/* {loginError && <p className="error">{loginError}</p>} */}
             <button type="submit" className={styles.loginBtn}>
-                {loading ? '로그인 중' : 'Login'}
+                {true ? '로그인 중' : 'Login'}
             </button>
         </form>
     )

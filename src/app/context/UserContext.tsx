@@ -36,6 +36,7 @@ export function UserProvider({ children }: PropsWithChildren) {
      * - Backend API 대기중
      */
     const fetchUser = useCallback((accessToken: string): Promise<D_User> => {
+        console.log(accessToken)
         /**
          * 테스트 return
          */

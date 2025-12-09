@@ -10,7 +10,6 @@ import { BookPage } from '../../page/book'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_CardItemPage, DEMO_ToastPopupPage } from '@/page/DEMO'
 import { AuthComponent } from '@/shared/component'
-import type React from 'react'
 /**
  * 커스텀 Route Object
  */

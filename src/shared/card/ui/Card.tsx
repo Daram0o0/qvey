@@ -1,6 +1,6 @@
 import { FaUserCircle } from 'react-icons/fa'
 import styles from './Card.module.css'
-import type { footerType } from '@/widgets/cardItem/ui/CardItem'
+import type { FooterType } from '@/widgets/cardItem/ui/CardItem'
 
 export type CardProps = {
     children?: React.ReactNode
@@ -9,7 +9,7 @@ export type CardProps = {
 }
 
 export type CardFooterProps = CardProps & {
-    footer: footerType
+    footer: FooterType
 }
 
 function Card({ children, className = '', onClick }: CardProps) {

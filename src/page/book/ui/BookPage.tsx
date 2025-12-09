@@ -1,15 +1,9 @@
 import style from './BookPage.module.css'
-import { useLoaderData } from 'react-router'
 import type { Book } from '@/features/book/types'
-import { useCallback, useState } from 'react'
-import AuthComponent from '@/shared/component/AuthComponent'
+import { useState } from 'react'
 
 function BookPage() {
-    const books = useLoaderData<Book[]>()
-    const [book, setBook] = useState<Book>()
-    const handleBook = useCallback((book: Book) => {
-        setBook(book)
-    }, [])
+    const [book] = useState<Book>()
     return (
         <div className={style.container}>
             {/* <BookList books={books} onClick={handleBook} /> */}
